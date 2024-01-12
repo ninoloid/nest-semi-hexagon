@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   nest-semi-hexagon-db:
-    image: 985465380175.dkr.ecr.ap-southeast-1.amazonaws.com/postgres:14.5-alpine
+    image: postgres:14-alpine
     restart: always
     environment:
       POSTGRES_DB: ${DATABASE_NAME}
