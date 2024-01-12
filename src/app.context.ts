@@ -1,7 +1,6 @@
 import { NestApplication, NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import configObj from '../config';
-import { SentryService } from '@ntegral/nestjs-sentry';
 
 let app: NestApplication = null;
 
@@ -17,8 +16,6 @@ export const applicationContext = async () => {
       origin: config.corsOrigin,
       exposedHeaders: config.corsHeaders,
     });
-
-    app.useLogger(SentryService.SentryServiceInstance());
   }
 
   return app;
