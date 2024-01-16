@@ -3,7 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { RouterModule } from '@nestjs/core';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TypeOrmConfigService } from 'config/database';
-import { internalRoutes } from './routes/default.routes';
+import { internalRoutes } from './routes/default.route';
 import { UsersModule } from './infrastructure/users/modules/users.module';
 
 const imports = [

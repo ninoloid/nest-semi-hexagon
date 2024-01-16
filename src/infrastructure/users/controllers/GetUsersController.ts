@@ -20,7 +20,7 @@ export class GetUsersController {
     type: GetUsersResponse,
   })
   @Get('/')
-  async getAllDbBoilerplateEntries(): Promise<GetUsersResponse> {
+  async getUsers(): Promise<GetUsersResponse> {
     const result = await this.getUsersService.findAll();
 
     return new Result<User[]>().success(HttpStatus.OK, SUCCESS, result);
