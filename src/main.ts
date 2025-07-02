@@ -16,7 +16,12 @@ async function bootstrap() {
       .setTitle(pjson.name)
       .setDescription(pjson.description)
       .setVersion(pjson.version)
-      .addTag('PopulixTechTeam')
+      .addTag(
+        pjson.name.replace(
+          /(^|-)(\w)/g,
+          (_, sep, c) => (sep === '-' ? ' ' : '') + c.toUpperCase(),
+        ),
+      )
       .build();
     const document = SwaggerModule.createDocument(app, config);
     SwaggerModule.setup('docs', app, document);
